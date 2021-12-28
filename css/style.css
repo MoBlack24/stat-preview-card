@@ -1,0 +1,242 @@
+/* Genral Rules */
+
+:root {
+    --dark-blue: hsl(233, 47%, 7%); /*(main background)*/
+    --dark-desaturated-blue: hsl(244, 38%, 16%); /*(card background)*/
+    --soft-violet: hsl(277, 64%, 61%); /*(accent)*/
+    --white: hsl(0, 0%, 100%); /*(main heading, stats*/
+    --white-p: hsla(0, 0%, 100%, 0.75); /*(main paragraph)*/
+    --white-s: hsla(0, 0%, 100%, 0.6); /*(stat headings)*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* font-size: 10px*/
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+    background-color: var(--dark-blue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* End of Genral Rules */
+
+/* Main Rules */
+
+.card {
+    width: 110rem;
+    margin-inline: 16rem;
+    background-color: var(--dark-desaturated-blue);
+    overflow: hidden;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.card__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card__info {
+    padding: 7rem;
+}
+
+.card__heading {
+    color: var(--white);
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.card__accent {
+    color: var(--soft-violet);
+}
+
+.card__main-text {
+    color: var(--white-p);
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+    line-height: 1.4;
+}
+
+.card__stat {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.card__stat-heading {
+    color: var(--white-s);
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+}
+
+.card__stats__list {
+    display: flex;
+    gap: 5rem;
+}
+
+.card__stat-heading {
+    text-transform: uppercase;
+}
+
+.card__image {
+    background-color: var(--soft-violet);
+}
+
+.card__image img {
+    mix-blend-mode: multiply;
+}
+
+.card__img--mobile {
+    display: none;
+}
+
+.attribution {
+    font-size: 2rem;
+    margin-top: 3rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+}
+.attribution a:hover { 
+    color: var(--soft-violet); 
+}
+
+/* Screen size 1360px */
+@media (max-width: 85em) {
+    html {
+        /* 9px / 16px  */
+        font-size: 56.25%;
+    }
+
+    .card {
+        width: 90rem;
+        margin-inline: 2rem;
+    }
+
+    .card__info {
+        padding: 3rem;
+    }
+
+    .card__heading {
+        font-size: 3rem;
+    }
+}
+
+
+/* Screen: 800px */
+@media (max-width: 50em) {
+    html {
+        /* font-size: 8px */
+        font-size: 50%;
+    }
+
+    .card {
+        max-width: 70rem;
+        margin-inline: auto;
+    }
+
+    .card__info {
+        padding: 4rem;
+    }
+
+    .card__heading {
+        font-size: 2rem;
+    }
+
+    .card__main-text {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .card__stat {
+        font-size: 1.2rem;
+    }
+
+    .card__stat-heading {
+        font-size: 1rem;
+    }
+}
+
+/* screen below 640px */
+@media (max-width: 40em) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .card {
+        width: 41rem;
+        margin-inline: 2rem;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+        text-align: center;
+    }
+
+    .card__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card__image {
+        order: 1;
+    }
+
+    .card__img--mobile {
+        display: block;
+    }
+
+    .card__img--desktop {
+        display: none;
+    }
+
+    .card__info {
+        order: 2;
+        padding: 5rem;
+    }
+
+    .card__heading {
+        font-size: 3rem;
+    }
+
+    .card__stats__list {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .attribution {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+}
